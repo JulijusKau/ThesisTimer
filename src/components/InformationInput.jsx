@@ -213,8 +213,8 @@ export const InformationInput = ({
           onClick={(e) => {
             e.preventDefault();
             if (
-              inputData.sleep_time === "" ||
-              inputData.total_hours === "" ||
+              inputData.sleep_time === 0 ||
+              inputData.total_hours === 0 ||
               inputData.deadline === "" ||
               inputData.exclude_holidays === ""
             ) {
