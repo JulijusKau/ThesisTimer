@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import { InformationInput } from "./components/InformationInput";
+import { PageNotFound } from "./components/PageNotFound";
+import { Result } from "./components/Result";
+import { useState } from "react";
+import "./styles/arrowAnimation.css";
+import "./styles/buttonAnimation.scss";
+import "./styles/borderStyle.scss";
 
 function App() {
+  const [busyHours, setBusyHours] = useState("");
+  const [inputData, setInputData] = useState({
+    deadline: "",
+    total_hours: "",
+    sleep_time: "",
+    exclude_holidays: "",
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <InformationInput
+              setBusyHours={setBusyHours}
+              busyHours={busyHours}
+              inputData={inputData}
+              setInputData={setInputData}
+            />
+          }
+        ></Route>
+        <Route path="*" element={<PageNotFound />}></Route>
+        <Route
+          path="/result"
+          element={
+            <Result
+              setBusyHours={setBusyHours}
+              busyHours={busyHours}
+              inputData={inputData}
+              setInputData={setInputData}
+            />
+          }
+        ></Route>
+      </Routes>
+    </>
   );
 }
 
