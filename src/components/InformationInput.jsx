@@ -119,6 +119,7 @@ export const InformationInput = ({
           }}
           onChange={(event) => {
             setInputData({
+              ...inputData,
               deadline: event.target.value,
             });
             setBusyHours();
