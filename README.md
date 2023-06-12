@@ -7,7 +7,8 @@ The project is small and does not require any additional explanation.
 ## Running ThesisTimer
 
 As the application is not hosted on gh pages or any other place - 
-Simply clone the code and run the application via 'npm start' command.
+Simply pull the code, get the latest dependencies required for the project via 'npm install' 
+and run the application via 'npm start' command.
 Good luck and have fun!
 
 
